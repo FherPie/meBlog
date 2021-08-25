@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-portafolio-564f1": {
+      "hosting": {
+        "meBlog": [
+          "ng-portafolio-564f1"
+        ]
+      }
+    }
+  }
+}

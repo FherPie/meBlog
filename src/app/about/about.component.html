@@ -1,0 +1,112 @@
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        
+        <div class="hexagon faArrowIcon ">
+          
+        </div>
+        <h3 class="text-center text-dark mt-3">Rápidas</h3>
+        <p class="text-center text-secondary">Optimizar el tiempo en respuesta de la aplicación</p>
+      </div>
+      <div class="col">
+        
+        <div class="hexagon faCubeIcon"></div>
+        
+        <h3 class="text-center text-dark mt-3">Full Stack</h3>
+        <p class="text-center text-secondary">Intregrar es un arte y en una aplicación puede tener varias tecnologías.</p>
+      </div>
+      <div class="col">
+        <div class="hexagon faChipIcon"></div>
+        <h3 class="text-center text-dark mt-3">Dinámicas</h3>
+        <p class="text-center text-secondary">Aplicaciones intuitivas para usuario</p>
+      </div>
+      <div class="col">
+        <div class="hexagon  faMobileIcon "></div>
+        <h3 class="text-center text-dark mt-3">Mobiles</h3>
+        <p class="text-center text-secondary">Aplicaciones distribuidas permite conectarse desde cualquier lugar.</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <img class="card-img-top" src="../../assets/avatar.jpg" alt="Card image"  class="img-thumbnail mx-auto d-block" width="200" height="100">
+        <h3 class="text-center text-secondary mt-3">Fernando Piedra</h3>
+        <p  class="text-center text-secondary">
+          Soy un apasionado con el desarrollo de software, el arte y la música. Me gusta integrar piezas de software  y luego ver el resultado.
+        </p>
+        
+        
+        <!-- <div class="card" style="width:400px">
+          <img class="card-img-top" src="../../assets/avatar.jpg" class="img-thumbnail" width="50" height="100" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">John Doe</h4>
+            <p class="card-text">Some example text.</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+          </div>
+        </div> -->
+        <!-- <ul>
+          <li>Clickable nav links that smooth scroll to page sections</li>
+          <li>Responsive behavior when clicking nav links perfect for a one page website</li>
+          <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
+          <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+        </ul> -->
+      </div>
+      <div class="col">
+        
+        <div class="progress md-progress mt-3" style="height: 40px">
+          <div class="progress-bar" role="progressbar" style="width: 25%; height: 40px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% ASP.Net</div>
+          
+          
+        </div>
+        
+        
+        <div class="progress md-progress mt-3" style="height: 40px">
+          <div class="progress-bar" role="progressbar" style="width: 25%; height: 40px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% ASP.Net</div>
+          
+          
+        </div>
+        <div class="progress md-progress mt-3" style="height: 40px">
+          <div class="progress-bar" role="progressbar" style="width: 25%; height: 40px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% ASP.Net</div>
+          
+          
+        </div>
+        <div class="progress md-progress mt-3" style="height: 40px">
+          <div class="progress-bar" role="progressbar" style="width: 25%; height: 40px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% ASP.Net</div>
+          
+          
+        </div>
+        <div class="progress md-progress mt-3" style="height: 40px">
+          <div class="progress-bar" role="progressbar" style="width: 25%; height: 40px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% ASP.Net</div>
+          
+          
+        </div>
+        <div class="progress md-progress mt-3" style="height: 40px">
+          <div class="progress-bar" role="progressbar" style="width: 25%; height: 40px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% ASP.Net</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <div class="col" *ngFor="let profile of $profile | async">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{profile.downloadUrl}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{profile.firstName}} {{profile.lastName}}</h5>
+              <p class="card-text">{{profile.jobTitle}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{profile.jobTitle}} at {{profile.company}}</li>
+      <!--         <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li> -->
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link  {{profile.startYear}}</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

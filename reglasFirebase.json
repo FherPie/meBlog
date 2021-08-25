@@ -1,0 +1,36 @@
+// These rules grant access to a node matching the authenticated
+// user's ID from the Firebase auth token
+{
+  "rules": {
+    "profile": {
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid"
+      }
+    },
+	 "email-list": {
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid"
+      }
+    },
+	 "projects-list": {
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid"
+      }
+    },
+	 "skills-list": {
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid"
+      }
+    },
+	 "tools-list": {
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}

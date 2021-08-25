@@ -1,0 +1,31 @@
+<section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <form  #form="ngForm" (ngSubmit)="register(form)" class="needs-validation" novalidate>
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" ngModel required>
+              <div class="valid-feedback">Ok.</div>
+              <div class="invalid-feedback">Por favor llene este campo.</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingrese su email" name="email" ngModel required>
+              <div class="valid-feedback">Ok.</div>
+              <div class="invalid-feedback">Por favor llene este campo.</div>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Su mensaje:</label>
+              <textarea class="form-control" rows="5"  placeholder="Ingrese su mensaje" id="mensaje" name="mensaje" ngModel required></textarea>
+              <div class="valid-feedback">Ok.</div>
+              <div class="invalid-feedback">Por favor llene este campo.</div>
+            </div>
+            <button type="submit"  [disabled]="form.invalid"  class="btn btn-primary">Enviar</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
