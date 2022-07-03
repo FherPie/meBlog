@@ -1,3 +1,21 @@
-<p>
-  skills-list works!
-</p>
+<section id="skills" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h6>Habilidades/Tech Stack</h6>
+      </div>
+    </div>  
+    <!-- TO DO 
+    Hay que darle una vizualizacion un poco diferente a la de proyectos -->
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="list-group" *ngFor="let skill of $skills | async ; index as i">
+          <img class="avatar" src="{{skill.skillImgUrl}}">
+          <div class="content">
+            <a class="header" href="{{skill.skillName}}">{{project.projectName}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

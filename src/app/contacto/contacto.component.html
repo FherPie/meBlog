@@ -2,27 +2,64 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Contact us</h2>
-          <form  #form="ngForm" (ngSubmit)="register(form)" class="needs-validation" novalidate>
+          <h2>Póngase en Contacto</h2>
+          <!--small class="text-secondary">Su mensaje más detallado</small-->
+
+          <form  (ngSubmit)="register()" class="needs-validation"   [formGroup]="contactMeForm">
+            <div  *ngIf="message" class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Ok!</strong> Mensaje enviado.
+            </div>
+
             <div class="form-group">
               <label for="nombre">Nombre:</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" ngModel required>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre"  formControlName="name" >
               <div class="valid-feedback">Ok.</div>
-              <div class="invalid-feedback">Por favor llene este campo.</div>
+              <div *ngIf="contactMeForm.get('name').invalid && (contactMeForm.get('name').dirty || contactMeForm.get('name').touched)"  
+              class="alert alert-danger">
+              <div>Hay errores en el campo</div>
+             <ul>
+               <li>El nombre es requerido</li>
+               <li>El nombre debe consistir de al menos 2 letras</li>
+             </ul>
+              </div>
             </div>
+
+
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Ingrese su email" name="email" ngModel required>
+              <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email" >
               <div class="valid-feedback">Ok.</div>
-              <div class="invalid-feedback">Por favor llene este campo.</div>
+              <div *ngIf="contactMeForm.get('email').invalid && (contactMeForm.get('email').dirty || contactMeForm.get('email').touched)" class="alert alert-danger" >El email debe ser válido.</div>
             </div>
+
+            <div class="form-group">
+              <label for="contactNumber">Número de Contacto:</label>
+              <input type="tel" class="form-control" id="contactNumber" placeholder="Ingrese su número de contacto"  formControlName="contactNumber">
+              <div class="valid-feedback">Ok.</div>
+              <div *ngIf="contactMeForm.get('contactNumber').invalid && (contactMeForm.get('contactNumber').dirty || contactMeForm.get('contactNumber').touched)"
+              class="alert alert-danger" >
+              <div>Debe ser un número de contacto válido</div>
+              <ul>
+                <li>El número de contacto debe ser de al menos 10 digitos</li>
+              </ul>
+              </div>
+            </div>
+
             <div class="form-group">
               <label for="mensaje">Su mensaje:</label>
-              <textarea class="form-control" rows="5"  placeholder="Ingrese su mensaje" id="mensaje" name="mensaje" ngModel required></textarea>
+              <textarea class="form-control" rows="5"  placeholder="Ingrese su mensaje" id="mensaje" formControlName="message" ></textarea>
               <div class="valid-feedback">Ok.</div>
-              <div class="invalid-feedback">Por favor llene este campo.</div>
+              <div *ngIf="contactMeForm.get('message').invalid && (contactMeForm.get('message').dirty || contactMeForm.get('message').touched)"
+              class="alert alert-danger" >
+              <div>El mensaje parece no ser válido</div>
+              <ul>
+                <li>El mensaje debe ser <strong>mínimo</strong> de 10 caracteres. </li>
+                <li>El mensaje debe ser <strong>máximo</strong> de 200 caracteres. </li>
+              </ul>
             </div>
-            <button type="submit"  [disabled]="form.invalid"  class="btn btn-primary">Enviar</button>
+            </div>
+            <button type="submit"  [disabled]="contactMeForm.invalid"  class="btn btn-primary">Enviar</button>
           </form>
 
         </div>

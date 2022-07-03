@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AdminModule } from './admin/admin.module';
+import { PortafolioPageComponent } from './pages/portafolio-page/portafolio-page.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AdminModule } from './admin/admin.module';
     FooterComponent,
     SkillsListComponent,
     ToolsListComponent,
-    AboutComponent
+    AboutComponent,
+    PortafolioPageComponent
   ],
   imports: [
     BrowserModule,

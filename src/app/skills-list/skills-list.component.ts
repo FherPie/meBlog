@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ComunService } from  '../services/comun.service';
 
 @Component({
   selector: 'app-skills-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsListComponent implements OnInit {
 
-  constructor() { }
+
+  skills: Observable<any[]>;
+
+  constructor(private dataService: ComunService) { }
 
   ngOnInit() {
+    this.skills= this.dataService.createCollection('skills-list');
   }
 
 }

@@ -1,34 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { IContactForm } from '../../contacto/contact.interface';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(
+    private firestore: AngularFirestore
+  ) { }
 
-  public createCollection(collectionName: string) {
-    return this.firestore.collection(collectionName).valueChanges();
+  public createCollection(collectionName: string): AngularFirestoreCollection {
+    return this.firestore.collection(collectionName);
   }
-
-
-  public saveContactDetails(details: IContactForm) {
-    const { name, email, message, contactNumber } = details;
-    return this.firestore.collection('email-list')
-      .add({
-        name,
-        email,
-        message,
-        contactNumber,
-        read: false,
-        date: new Date()
-      });
-  }
-
 
   public getData(profileCollectionRef: AngularFirestoreCollection) {
     return profileCollectionRef.snapshotChanges().pipe(

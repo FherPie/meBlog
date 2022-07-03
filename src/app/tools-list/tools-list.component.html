@@ -1,3 +1,21 @@
-<p>
-  tools-list works!
-</p>
+<section id="tools" class="bg-light" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h6>Herramientas/Tools</h6>
+      </div>
+    </div>  
+    <!-- TO DO 
+    Hay que darle una vizualizacion un poco diferente a la de proyectos -->
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="list-group" *ngFor="let tool of $tools | async ; index as i">
+          <img class="avatar" src="{{tool.toolImgUrl}}">
+          <div class="content">
+            <a class="header" href="{{tool.toolName}}">{{project.projectName}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
