@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AdminModule } from './admin/admin.module';
 import { PortafolioPageComponent } from './pages/portafolio-page/portafolio-page.component';
+import { TiendaonlineinfoComponent } from './tiendaonlineinfo/tiendaonlineinfo.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PortafolioPageComponent } from './pages/portafolio-page/portafolio-page
     SkillsListComponent,
     ToolsListComponent,
     AboutComponent,
-    PortafolioPageComponent
+    PortafolioPageComponent,
+    TiendaonlineinfoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,32 +6,72 @@
   margin: 0;
   min-height: 100%;
   padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  color: white;
 }
 
-#page-top {
-  // background-color: red;
-  height: 100%;
-  width: 100%;
+:root{
+   --img: url("assets/quitonocturno.jpg");
+
 }
 
- header {
-     background-image:url('assets/blur.jpg');
-     padding: 200px 0;
-     height: 100%;
-     background-size:100% auto;
-     width: 100%;
+
+ body {
+     background:var(--img) no-repeat center fixed ;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;   
   }
-  
+
+
+
+
+  .givingblur::before {
+    content: '';
+    background: url('assets/quitonocturno.jpg') 0 0 / cover fixed no-repeat;
+    filter: blur(2px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity:0.5;
+}
+
+.givingblur {
+
+    // border-radius: 5px;
+    // box-shadow: 0 0 15px rgba(black, .4);
+    // border: 1px solid rgba(white, .1);
+    color: white;
+    font: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 8px rgba(black, .5);
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+}
+
+
+
+
   section {
-    padding: 150px 0;
+    padding: 20px 0;
     width: 100%;
   }
 
-#about{
 
-  padding: 100px 0;
+
+
+
+#skills{
+  padding: 10px 0;
 }
-
   .hexagon {
      width: 100px;
      height: 100px;
@@ -44,57 +84,67 @@
      padding-top: 5%;
 }
   
-.faArrowIcon {
-  position:relative;
-}
+// .faArrowIcon {
+//   position:relative;
+// }
 
-.faArrowIcon:before {
-  font-family: FontAwesome; 
-  margin-left: 30%;
-  margin-top: 100 px;
-  color: white;
-  font-size: 50px;
-  content: "\f2dd"; 
-}
-
-
-
-.faCubeIcon {
-  position:relative;
-}
-
-.faCubeIcon:before {
-  font-family: FontAwesome; 
-  margin-left: 30%;
-  margin-top: 100 px;
-  color: white;
-  font-size: 50px;
-  content: "\f2b8 "; 
-}
+// .faArrowIcon:before {
+//   font-family: FontAwesome; 
+//   margin-left: 30%;
+//   margin-top: 100 px;
+//   color: white;
+//   font-size: 50px;
+//   content: "\f2dd"; 
+// }
 
 
 
-.faChipIcon {
-  position:relative;
-}
+// .faCubeIcon {
+//   position:relative;
+// }
 
-.faChipIcon:before {
-  font-family: FontAwesome; 
-  margin-left: 30%;
-  margin-top: 100 px;
-  color: white;
-  font-size: 50px;
-  content: "\f2db"; 
-}
+// .faCubeIcon:before {
+//   font-family: FontAwesome; 
+//   margin-left: 30%;
+//   margin-top: 100 px;
+//   color: white;
+//   font-size: 50px;
+//   content: "\f2b8 "; 
+// }
 
-.faMobileIcon {
-  position:relative;
-}
 
-.faMobileIcon:before {
-  font-family: FontAwesome; 
-  margin-left: 35%;
-  color: white;
-  font-size: 70px;
-  content: "\f10b"; 
-}
+
+// .faChipIcon {
+//   position:relative;
+// }
+
+// .faChipIcon:before {
+//   font-family: FontAwesome; 
+//   margin-left: 30%;
+//   margin-top: 100 px;
+//   color: white;
+//   font-size: 50px;
+//   content: "\f2db"; 
+// }
+
+// .faMobileIcon {
+//   position:relative;
+// }
+
+// .faMobileIcon:before {
+//   font-family: FontAwesome; 
+//   margin-left: 35%;
+//   color: white;
+//   font-size: 70px;
+//   content: "\f10b"; 
+// }
+
+// .protienda{
+// background-color: darkturquoise;
+
+// }
+
+
+// .probanco{
+//   background-color:aquamarine;
+// }

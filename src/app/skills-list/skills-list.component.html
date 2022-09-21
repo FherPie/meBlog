@@ -1,21 +1,52 @@
-<section id="skills" >
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h6>Habilidades/Tech Stack</h6>
-      </div>
-    </div>  
-    <!-- TO DO 
-    Hay que darle una vizualizacion un poco diferente a la de proyectos -->
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <div class="list-group" *ngFor="let skill of $skills | async ; index as i">
-          <img class="avatar" src="{{skill.skillImgUrl}}">
-          <div class="content">
-            <a class="header" href="{{skill.skillName}}">{{project.projectName}}</a>
-          </div>
+<section id="skills">
+
+  <div class="container-fluid ">
+
+
+    <div class="row ">
+      <div class="col ">
+        <div class="mx-auto text-center mb-4 givingblur " style="width: 200px; border-bottom: 1px solid">
+          <div class="font-weight-bold pb-2 pt-2 "> Stack Tecnológico </div>
         </div>
       </div>
+    </div>
+
+    <!-- TO DO 
+    Hay que darle una vizualizacion un poco diferente a la de proyectos -->
+
+    <div class="row ">
+      <!-- <div class="col-lg-12 col-md-12">
+        <h5>Habilidades/Tech Stack</h5>
+      </div>     -->
+      <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 text-center givingblur"
+        *ngFor="let skill of skills | async ; index as i">
+        <div class="text-center" style="width: 18rem;">
+          <img class=" card-img-top" style="width: 3rem;" src="{{skill.skillImgUrl}}" alt="{{skill.skillName}}">
+          <div class="">
+            <h5 class="card-title">
+              {{skill.skillName}}
+              <br />
+            </h5>
+            <!-- <div class="progress">
+              <div class="progress-bar" role="progressbar" [style.width]="skill.skillLevel*10+'%'"  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">{{skill.skillLevel *10}}%</div>
+            </div> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-lg-6 col-sm-6 col-xs-6 text-right">
+        <a  [href]="linkedInLink"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-lg-6 col-sm-6 col-xs-6">
+        <a  [href]="githubLink"><i class="fa fa-github-square fa-lg" aria-hidden="true"></i></a>
+      </div>
+    </div> -->
+    <div class="mx-auto text-center mt-2 " style=" width: 200px; float: left; top: 150%; bottom: 0%; ">
+
+      <a class="small text-muted" target="_blank" href="https://www.facebook.com/quitoen360ec/"> Photo by Quito 360</a>
     </div>
   </div>
 </section>

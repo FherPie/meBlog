@@ -19,13 +19,13 @@
 
 
   $(document).on("click", 'a.nav-link.js-scroll-trigger', function() {
-    alert('Você clicou em um painel!');
+     alert('Comming Soon !');
 });
 
 
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
-    alert("vale");
+    // alert("vale");
     $('.navbar-collapse').collapse('hide');
   });
 

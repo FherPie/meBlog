@@ -1,68 +1,98 @@
 <section id="contact">
-    <div class="container">
+  <div class="container">
+    <!-- <div class="row"> -->
+    <!-- <div class="col col-md-12 mx-auto"> -->
+    <!-- <h2>Póngase en Contacto</h2> -->
+    <!--small class="text-secondary">Su mensaje más detallado</small-->
+
+    <form (ngSubmit)="register()" class="needs-validation" [formGroup]="contactMeForm">
+
+      <div *ngIf="message" class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Ok!</strong> Mensaje enviado.
+      </div>
+
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Póngase en Contacto</h2>
-          <!--small class="text-secondary">Su mensaje más detallado</small-->
 
-          <form  (ngSubmit)="register()" class="needs-validation"   [formGroup]="contactMeForm">
-            <div  *ngIf="message" class="alert alert-success alert-dismissible">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>Ok!</strong> Mensaje enviado.
+        <div class="col">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend " for="nombre">
+                <div class="input-group-text">Nombre:</div>
+              </div>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre"
+                formControlName="name">
             </div>
-
-            <div class="form-group">
-              <label for="nombre">Nombre:</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre"  formControlName="name" >
-              <div class="valid-feedback">Ok.</div>
-              <div *ngIf="contactMeForm.get('name').invalid && (contactMeForm.get('name').dirty || contactMeForm.get('name').touched)"  
+            <div class="valid-feedback">Ok.</div>
+            <div
+              *ngIf="contactMeForm.get('name').invalid && (contactMeForm.get('name').dirty || contactMeForm.get('name').touched)"
               class="alert alert-danger">
               <div>Hay errores en el campo</div>
-             <ul>
-               <li>El nombre es requerido</li>
-               <li>El nombre debe consistir de al menos 2 letras</li>
-             </ul>
+              <ul>
+                <li>El nombre es requerido</li>
+                <li>El nombre debe consistir de al menos 2 letras</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend" for="email">
+                <div class="input-group-text"> Email:</div>
               </div>
+              <input type="email" class="form-control" id="email" placeholder="Ingrese su email"
+                formControlName="email">
             </div>
-
-
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Ingrese su email" formControlName="email" >
-              <div class="valid-feedback">Ok.</div>
-              <div *ngIf="contactMeForm.get('email').invalid && (contactMeForm.get('email').dirty || contactMeForm.get('email').touched)" class="alert alert-danger" >El email debe ser válido.</div>
+            <div class="valid-feedback">Ok.</div>
+            <div
+              *ngIf="contactMeForm.get('email').invalid && (contactMeForm.get('email').dirty || contactMeForm.get('email').touched)"
+              class="alert alert-danger">El email debe ser válido.</div>
+          </div>
+        </div>
+        <!-- <div class="col">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend" for="contactNumber">
+                <div class="input-group-text"> Número:</div>
+              </div>
+              <input type="tel" class="form-control" id="contactNumber" placeholder="Ingrese su número de contacto"
+                formControlName="contactNumber">
             </div>
-
-            <div class="form-group">
-              <label for="contactNumber">Número de Contacto:</label>
-              <input type="tel" class="form-control" id="contactNumber" placeholder="Ingrese su número de contacto"  formControlName="contactNumber">
-              <div class="valid-feedback">Ok.</div>
-              <div *ngIf="contactMeForm.get('contactNumber').invalid && (contactMeForm.get('contactNumber').dirty || contactMeForm.get('contactNumber').touched)"
-              class="alert alert-danger" >
+            <div class="valid-feedback">Ok.</div>
+            <div
+              *ngIf="contactMeForm.get('contactNumber').invalid && (contactMeForm.get('contactNumber').dirty || contactMeForm.get('contactNumber').touched)"
+              class="alert alert-danger">
               <div>Debe ser un número de contacto válido</div>
               <ul>
                 <li>El número de contacto debe ser de al menos 10 digitos</li>
               </ul>
-              </div>
             </div>
-
-            <div class="form-group">
-              <label for="mensaje">Su mensaje:</label>
-              <textarea class="form-control" rows="5"  placeholder="Ingrese su mensaje" id="mensaje" formControlName="message" ></textarea>
-              <div class="valid-feedback">Ok.</div>
-              <div *ngIf="contactMeForm.get('message').invalid && (contactMeForm.get('message').dirty || contactMeForm.get('message').touched)"
-              class="alert alert-danger" >
+          </div>
+        </div> -->
+        <div class="col">
+          <div class="form-group">
+            <label for="mensaje">Su mensaje:</label>
+            <textarea class="form-control" rows="5" placeholder="Ingrese su mensaje" id="mensaje"
+              formControlName="message"></textarea>
+            <div class="valid-feedback">Ok.</div>
+            <div
+              *ngIf="contactMeForm.get('message').invalid && (contactMeForm.get('message').dirty || contactMeForm.get('message').touched)"
+              class="alert alert-danger">
               <div>El mensaje parece no ser válido</div>
               <ul>
                 <li>El mensaje debe ser <strong>mínimo</strong> de 10 caracteres. </li>
                 <li>El mensaje debe ser <strong>máximo</strong> de 200 caracteres. </li>
               </ul>
             </div>
-            </div>
-            <button type="submit"  [disabled]="contactMeForm.invalid"  class="btn btn-primary">Enviar</button>
-          </form>
-
+          </div>
+        </div>
+        <div class="col">
+          <button type="submit" [disabled]="contactMeForm.invalid" class="btn btn-primary">Enviar</button>
         </div>
       </div>
-    </div>
-  </section>
+    </form>
+    <!-- </div> -->
+    <!-- </div> -->
+  </div>
+</section>

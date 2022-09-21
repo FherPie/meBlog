@@ -1,17 +1,23 @@
-<section id="services" class="bg-light">
+<section id="portafolio" class="bg-light">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h6>Proyectos/Projects</h6>
-      </div>
+    <div class="jumbotron">
+      <h1> <i class="fa fa-briefcase" aria-hidden="true"> </i> Proyectos free</h1>
+      <p class="text-info">Contruyo proyectos fuertes.</p>
     </div>
     <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <div class="list-group" *ngFor="let project of $projects | async ; index as i">
-          <img class="avatar" src="{{project.projectIconUrl}}">
-          <div class="content">
-            <a class="header" href="{{project.projectUrl}}">{{project.projectName}}</a>
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let project of $projects | async ; index as i">
+        <div class="card text-center" >
+          <img class="card-img-top" class="imagencover"  src="{{project.projectIconUrl}}" alt="{{project.projectName}}">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="btn btn-link btn-xs" role="button" disabled="disabled"
+                href="{{project.projectUrl}}">{{project.projectName}}</a>
+            </h5>
           </div>
+          <a role="button" class="btn btn-info btn-lg" href="{{project.projectUrl}}">
+            <!-- aria-hidden hides decorative icons from screen readers -->
+            <i class="fa fa-info" aria-hidden="true"></i> Ver Info
+          </a>
         </div>
       </div>
     </div>

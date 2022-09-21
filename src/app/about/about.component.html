@@ -1,38 +1,76 @@
-<section id="about">
-  <div class="container">
-    <div class="row mt-5">
-      <a class="nav-link js-scroll-trigger" href="#about">Acerca de mi</a>
-      <div class="col">
-        <div class="col" *ngFor="let profile of $profile | async">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{profile.downloadUrl}}" alt="{{profile.firstName}} {{profile.lastName}}">
-            <div class="card-body">
-              <h5 class="card-title">{{profile.firstName}} {{profile.lastName}}</h5>
-              <p class="card-text">{{profile.jobTitle}}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">{{profile.jobTitle}} at {{profile.company}}</li>
-      <!--         <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li> -->
-            </ul>
-            <div class="card-body">
-              <h1>{{profile.startYear}}</h1>
-            </div>
-
-            <div  class="">  
-                <h1>About Me</h1>
-            </div>  
-             <hr/>
-             
-             <div>
-              <p>{{profile.aboutMe}}</p>
-            </div>
+<section id="about" class="">
+  <div class="container-fluid ">
+    <div class="row " *ngFor="let profile of $profile | async">
+      <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 text-center  " style="float: none; margin: 0 auto; border-right: 1px solid white; color: white;"> -->
+       
+       
+          <!-- <div class="card text-center" >
+            <img class="img-responsive cardFoto" src="{{profile.downloadUrl}}" alt="{{profile.firstName}} {{profile.lastName}}">
+          </div>
+          <blockquote class="blockquote text-center">
+            <p class="mb-0" style="color: white;">"Su carencia de fé resulta molesta."</p>
+            <footer class="blockquote-footer" style="color: white;">Dark Vader <cite title="Source Title">Tomado de Internet</cite></footer>
+          </blockquote> -->
+<!-- 
+        <div class="mx-auto text-center mb-4 " style=" width: 125px; border-bottom: 1px solid; float: left;">
+          <div class="font-weight-bold  "> Coding </div>
+          </div>
+       
+         <div class="mx-auto text-center" style="">
+           <a  [href]="linkedInLink"><i class="fa fa-linkedin-square fa-3x mr-3" aria-hidden="true"></i></a>
+           <a  [href]="githubLink"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+         </div>  -->
 
 
+      <!-- </div> -->
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 givingblur " style="float: none; margin: 0 auto;">
+        <div class="text-center" >
+          <div class=" ">
+            <h5 class=" ">{{profile.firstName}} {{profile.lastName}}</h5>
+            <p class="">{{profile.jobTitle}} 🖥-Bilingüe 🌍 English</p>
+            <p class="">Me encanta el desarrollo de sistemas y sus misterios 😆</p>
+          </div>
         </div>
       </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 givingblur pt-5" style="float: none; margin: 0 auto; border-right: 1px solid white; ">
+  
+<!--      
+            <h6> <a href="#contentaboutme" data-toggle="collapse" i18n> <i class="fa fa-plus-square-o"
+                  aria-hidden="true"></i>
+                Acerca de mi:</a></h6> -->
+            <!-- <div id="contentaboutme" class="collapse in"> -->
+              <p i18n class="text-center">Me gusta ser curioso ☑, la música 🎵, la literatura 🔠, salir 🌌.<br/> <br/>
+              La imagen  de fondo es de mi ciudad, la cual admiro por su belleza y sencillez, en realidad es mi favorita: Quito-EC
+              <br/>
+              <br/>
+              <!-- Foto tomada del sitio:
+              <a class="bg-dark text-white" target="_blank" href="https://www.facebook.com/quitoen360ec/"> <i class="fa fa-picture-o" aria-hidden="true"> </i></a> -->
+            </p>
+           
+            <!-- </div> -->
+         
+        
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 my-auto givingblur " style="float: none; margin: 0 auto;">
+        <div class="mx-auto text-center mb-4" style=" width: 125px; border-bottom: 1px solid; float: left;">
+          <div class="font-weight-bold mt-4  "> Networking </div>
+          </div>
+       
+         <div class="mx-auto text-center" style="">
+           <a  [href]="linkedInLink"><i class="fa fa-linkedin-square fa-3x mr-3" aria-hidden="true"></i></a>
+           <a  [href]="githubLink"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+         </div>        
+      </div>
+
+      <app-skills-list></app-skills-list>      
+      <!-- <app-contacto></app-contacto> -->
     </div>
 
+    
   </div>
-</div>
+
+
+
 </section>
+
+
